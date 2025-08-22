@@ -1,0 +1,154 @@
+
+/* TT Kohost RTL and Custom Styles */
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Vazir', 'Tahoma', sans-serif;
+}
+
+/* RTL Bootstrap fixes */
+.float-left {
+    float: right !important;
+}
+
+.float-right {
+    float: left !important;
+}
+
+.text-left {
+    text-align: right !important;
+}
+
+.text-right {
+    text-align: left !important;
+}
+
+.mr-1, .mr-2, .mr-3, .mr-4, .mr-5 {
+    margin-right: 0 !important;
+}
+
+.ml-1 { margin-right: 0.25rem !important; }
+.ml-2 { margin-right: 0.5rem !important; }
+.ml-3 { margin-right: 1rem !important; }
+.ml-4 { margin-right: 1.5rem !important; }
+.ml-5 { margin-right: 3rem !important; }
+
+.me-1 { margin-left: 0.25rem !important; }
+.me-2 { margin-left: 0.5rem !important; }
+.me-3 { margin-left: 1rem !important; }
+
+/* Custom Business Type Cards */
+.business-type-card .card {
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.business-type-card input[type="radio"]:checked + .card {
+    border-color: var(--primary);
+    background-color: var(--primary-light);
+    transform: scale(1.05);
+}
+
+.business-type-card .card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Notification Styles */
+.tt-notifications .notification-item:last-child {
+    border-bottom: none !important;
+}
+
+/* Service Cards */
+.service-card.locked {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+}
+
+.service-card.locked .btn {
+    opacity: 0.7;
+}
+
+.lock-overlay {
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Referral Dashboard */
+.tt-referral-dashboard .card {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tt-referral-dashboard .input-group .btn {
+    border-right: 1px solid #ced4da;
+    border-left: none;
+}
+
+/* Form Styles */
+.tt-custom-forms .form-group label {
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+.tt-custom-forms .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(28, 64, 242, 0.25);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .business-type-card {
+        margin-bottom: 1rem;
+    }
+    
+    .tt-referral-dashboard .card-body {
+        padding: 1rem;
+    }
+    
+    .service-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Dark Mode Support */
+[data-bs-theme="dark"] .business-type-card .card {
+    background-color: var(--gray-light);
+    border-color: var(--border-color);
+}
+
+[data-bs-theme="dark"] .service-card {
+    background-color: var(--gray-light);
+    border-color: var(--border-color);
+}
+
+[data-bs-theme="dark"] .tt-notifications .alert {
+    background-color: var(--gray-light);
+    border-color: var(--border-color);
+    color: var(--body-color);
+}
+
+/* Animation Effects */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tt-services-grid .service-card {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.tt-services-grid .service-card:nth-child(1) { animation-delay: 0.1s; }
+.tt-services-grid .service-card:nth-child(2) { animation-delay: 0.2s; }
+.tt-services-grid .service-card:nth-child(3) { animation-delay: 0.3s; }
