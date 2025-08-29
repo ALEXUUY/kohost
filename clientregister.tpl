@@ -26,25 +26,114 @@
 
 {if !$registrationDisabled}
     <div id="registration" class="tt-registration-form tt-custom-radius p-4 p-lg-5 bg-white">
+        
+        <!-- Business Management Header -->
+        <div class="text-center mb-5">
+            <h1 class="h3 mb-2 text-primary">مدیریت کسب و کار آنلاین</h1>
+            <p class="text-muted lead">کسب‌وکار خود را ایجاد کنید، توسعه دهید و درآمد کسب کنید</p>
+            <div class="d-flex justify-content-center align-items-center mb-3">
+                <div class="bg-primary-light text-primary px-3 py-1 rounded-pill small">
+                    <i class="fas fa-chart-line me-1"></i> رشد و توسعه
+                </div>
+                <div class="bg-success-light text-success px-3 py-1 rounded-pill small mx-2">
+                    <i class="fas fa-coins me-1"></i> کسب درآمد
+                </div>
+                <div class="bg-info text-white px-3 py-1 rounded-pill small">
+                    <i class="fas fa-bullhorn me-1"></i> تبلیغات
+                </div>
+            </div>
+        </div>
 
         <form method="post" class="using-password-strength" action="{$smarty.server.PHP_SELF}" role="form" name="orderfrm" id="frmCheckout">
             <input type="hidden" name="register" value="true"/>
 
             <div id="containerNewUserSignup">
 
-                <div class="text-center mb-4">
-                    <h1 class="h4 mb-0">{$LANG.clientregistertitle}</h1>
-                    {include file="$template/includes/linkedaccounts.tpl" linkContext="registration"}
-                    {if $linkableProviders}
-                        <div class="tt-or-text">
-                            {$LANG.orText}
+                <!-- Business Type Selection -->
+                <div class="card border-0 mb-4 bg-gradient">
+                    <div class="card-body p-4">
+                        <h3 class="h5 text-white mb-3 text-center">نوع کسب‌وکار خود را انتخاب کنید</h3>
+                        <div class="row g-3">
+                            <div class="col-md-4 col-6">
+                                <div class="business-type-card">
+                                    <input type="radio" name="business_type" value="website" id="business_website" checked>
+                                    <label for="business_website" class="card h-100 text-center p-3 bg-white">
+                                        <i class="fas fa-globe fa-2x mb-2 text-primary"></i>
+                                        <h6 class="card-title mb-1">ایجاد سایت</h6>
+                                        <small class="text-muted">وبسایت حرفه‌ای بسازید</small>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="business-type-card">
+                                    <input type="radio" name="business_type" value="advertising" id="business_advertising">
+                                    <label for="business_advertising" class="card h-100 text-center p-3 bg-white">
+                                        <i class="fas fa-bullhorn fa-2x mb-2 text-primary"></i>
+                                        <h6 class="card-title mb-1">تبلیغات</h6>
+                                        <small class="text-muted">کمپین‌های موثر</small>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="business-type-card">
+                                    <input type="radio" name="business_type" value="marketing" id="business_marketing">
+                                    <label for="business_marketing" class="card h-100 text-center p-3 bg-white">
+                                        <i class="fas fa-chart-line fa-2x mb-2 text-primary"></i>
+                                        <h6 class="card-title mb-1">بازاریابی</h6>
+                                        <small class="text-muted">استراتژی فروش</small>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="business-type-card">
+                                    <input type="radio" name="business_type" value="referral" id="business_referral">
+                                    <label for="business_referral" class="card h-100 text-center p-3 bg-white">
+                                        <i class="fas fa-users fa-2x mb-2 text-primary"></i>
+                                        <h6 class="card-title mb-1">زیرمجموعه‌گیری</h6>
+                                        <small class="text-muted">شبکه فروش بسازید</small>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="business-type-card">
+                                    <input type="radio" name="business_type" value="writing" id="business_writing">
+                                    <label for="business_writing" class="card h-100 text-center p-3 bg-white">
+                                        <i class="fas fa-pen fa-2x mb-2 text-primary"></i>
+                                        <h6 class="card-title mb-1">نویسندگی</h6>
+                                        <small class="text-muted">محتوای کیفیت</small>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="business-type-card">
+                                    <input type="radio" name="business_type" value="ecommerce" id="business_ecommerce">
+                                    <label for="business_ecommerce" class="card h-100 text-center p-3 bg-white">
+                                        <i class="fas fa-shopping-cart fa-2x mb-2 text-primary"></i>
+                                        <h6 class="card-title mb-1">فروشگاه آنلاین</h6>
+                                        <small class="text-muted">تجارت الکترونیک</small>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-                    {/if}
+                    </div>
                 </div>
+                
+                {include file="$template/includes/linkedaccounts.tpl" linkContext="registration"}
+                {if $linkableProviders}
+                    <div class="tt-or-text">
+                        {$LANG.orText}
+                    </div>
+                {/if}
 
-                <div class="card border-0 mb-4">
-                    <div class="card-body p-0" id="personalInformation">
-                        <h3 class="h6">{lang key='orderForm.personalInformation'}</h3>
+                <div class="card border-0 mb-4 tt-custom-radius shadow-sm">
+                    <div class="card-body p-4" id="personalInformation">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-user-circle fa-2x text-primary me-3"></i>
+                            <div>
+                                <h3 class="h5 mb-0">اطلاعات شخصی</h3>
+                                <p class="text-muted small mb-0">اطلاعات کاربری خود را وارد کنید</p>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-sm-6">
@@ -84,9 +173,15 @@
                     </div>
                 </div>
 
-                <div class="card border-0 mb-4">
-                    <div class="card-body p-0">
-                        <h3 class="h6">{lang key='orderForm.billingAddress'}</h3>
+                <div class="card border-0 mb-4 tt-custom-radius shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
+                            <div>
+                                <h3 class="h5 mb-0">آدرس و اطلاعات تماس</h3>
+                                <p class="text-muted small mb-0">آدرس و اطلاعات کسب‌وکار خود را وارد کنید</p>
+                            </div>
+                        </div>
 
                         <div class="row">
                             <div class="col-sm-12">
@@ -217,9 +312,15 @@
 
             <div id="containerNewUserSecurity" {if $remote_auth_prelinked && !$securityquestions } class="w-hidden"{/if}>
 
-                <div class="card border-0 mb-4">
-                    <div class="card-body p-0">
-                        <h3 class="h6">{lang key='orderForm.accountSecurity'}</h3>
+                <div class="card border-0 mb-4 tt-custom-radius shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-shield-alt fa-2x text-success me-3"></i>
+                            <div>
+                                <h3 class="h5 mb-0">امنیت حساب کاربری</h3>
+                                <p class="text-muted small mb-0">کلمه عبور قوی برای حساب خود انتخاب کنید</p>
+                            </div>
+                        </div>
 
                         <div id="containerPassword" class="row{if $remote_auth_prelinked && $securityquestions} hidden{/if}">
                             <div id="passwdFeedback" class="alert alert-info text-center col-sm-12 w-hidden"></div>
@@ -302,8 +403,24 @@
                 </label>
             {/if}
 
+            <!-- Success Promise -->
+            <div class="card border-0 mb-4 bg-success-light">
+                <div class="card-body p-3">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle fa-2x text-success me-3"></i>
+                        <div>
+                            <h6 class="mb-1 text-success">آماده شروع کسب‌وکار آنلاین؟</h6>
+                            <small class="text-muted">امکانات حرفه‌ای، پشتیبانی ۲۴ ساعته و ابزارهای پیشرفته در انتظار شماست</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="d-flex justify-content-between align-items-center">
-                <input class="btn btn-lg btn-primary{$captcha->getButtonClass($captchaForm)}" type="submit" value="{lang key='clientregistertitle'}"/>
+                <button class="btn btn-lg btn-primary{$captcha->getButtonClass($captchaForm)} px-5" type="submit">
+                    <i class="fas fa-rocket me-2"></i>
+                    شروع کسب‌وکار آنلاین
+                </button>
                 <ul class="list-inline mb-0 float-lg-right">
                     {if $languagechangeenabled && count($locales) > 1 || $currencies}
                         <li class="list-inline-item">

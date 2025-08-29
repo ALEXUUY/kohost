@@ -112,7 +112,8 @@ function tt_kohost_get_business_types() {
         'advertising' => 'تبلیغات',
         'marketing' => 'بازاریابی',
         'referral' => 'زیرمجموعه‌گیری',
-        'writing' => 'نویسندگی'
+        'writing' => 'نویسندگی',
+        'ecommerce' => 'فروشگاه آنلاین'
     ];
 }
 
