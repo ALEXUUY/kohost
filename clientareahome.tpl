@@ -155,3 +155,41 @@
         </div>
     </div>
 </div>
+{* TT Kohost Custom Dashboard *}
+{include file="$template/includes/tt/kohost/tt-notifications.tpl"}
+
+{if $tt_user_data.business_type}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card bg-gradient-primary text-white">
+            <div class="card-body">
+                <h5><i class="fas fa-user-tie me-2"></i>نوع کسب‌وکار شما: {$business_types[$tt_user_data.business_type]}</h5>
+                <p class="mb-0">سرویس‌های مخصوص کسب‌وکار شما را در زیر مشاهده کنید</p>
+            </div>
+        </div>
+    </div>
+</div>
+{/if}
+
+{* Services Grid *}
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-th-large me-2"></i>سرویس‌های موجود</h5>
+            </div>
+            <div class="card-body">
+                {include file="$template/includes/tt/kohost/tt-services-grid.tpl"}
+            </div>
+        </div>
+    </div>
+</div>
+
+{* Referral Dashboard *}
+{if $tt_user_data.business_type == 'referral' || $tt_referral_stats.total_referrals > 0}
+<div class="row mb-4">
+    <div class="col-md-12">
+        {include file="$template/includes/tt/kohost/tt-referral-dashboard.tpl"}
+    </div>
+</div>
+{/if}

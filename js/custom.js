@@ -157,3 +157,86 @@ var initDarkMode = () => {
 };
 
 initDarkMode();
+
+// TT Kohost Custom Functions
+jQuery(document).ready(function() {
+    // Business type selection
+    jQuery('.business-type-card input[type="radio"]').change(function() {
+        jQuery('.business-type-card .card').removeClass('selected');
+        jQuery(this).closest('.business-type-card').find('.card').addClass('selected');
+    });
+    
+    // Service card interactions
+    jQuery('.service-card.locked').click(function(e) {
+        e.preventDefault();
+        var serviceName = jQuery(this).find('.card-title').text();
+        if (confirm('سرویس ' + serviceName + ' قفل است. آیا می‌خواهید آن را خریداری کنید؟')) {
+            // Redirect to purchase page
+            window.location.href = 'cart.php';
+        }
+    });
+    
+    // Auto-hide notifications after 10 seconds
+    setTimeout(function() {
+        jQuery('.tt-notifications .alert').fadeOut();
+    }, 10000);
+    
+    // Form validation for custom forms
+    jQuery('.tt-custom-forms form').submit(function(e) {
+        var isValid = true;
+        jQuery(this).find('input[required], select[required], textarea[required]').each(function() {
+            if (!jQuery(this).val()) {
+                jQuery(this).addClass('is-invalid');
+                isValid = false;
+            } else {
+                jQuery(this).removeClass('is-invalid');
+            }
+        });
+        
+        if (!isValid) {
+            e.preventDefault();
+            alert('لطفاً تمام فیلدهای ضروری را پر کنید.');
+        }
+    });
+    
+    // Copy referral link functionality
+    if (typeof copyReferralLink === 'undefined') {
+        window.copyReferralLink = function() {
+            var copyText = document.getElementById("referralLink");
+            if (copyText) {
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+                document.execCommand("copy");
+                
+                // Show success message
+                var btn = jQuery('.btn:contains("کپی")');
+                var originalText = btn.html();
+                btn.html('<i class="fas fa-check"></i> کپی شد');
+                btn.addClass('btn-success').removeClass('btn-primary');
+                
+                setTimeout(function() {
+                    btn.html(originalText);
+                    btn.removeClass('btn-success').addClass('btn-primary');
+                }, 2000);
+            }
+        };
+    }
+    
+    // Real-time form preview for website forms
+    jQuery('input[name="website_name"]').on('input', function() {
+        var name = jQuery(this).val();
+        if (name) {
+            jQuery('#website-preview-name').text(name);
+        }
+    });
+    
+    // Service unlock functionality
+    if (typeof unlockService === 'undefined') {
+        window.unlockService = function(serviceId) {
+            if (confirm('آیا می‌خواهید این سرویس را خریداری کنید؟')) {
+                // You can customize this based on your WHMCS setup
+                window.location.href = 'cart.php?a=add&pid=' + serviceId;
+            }
+        };
+    }
+});

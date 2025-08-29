@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{if $kbarticle.title}{$kbarticle.title} - {/if}{$pagetitle} - {$companyname}</title>
     {include file="$template/includes/head.tpl"}
+    <link href="{$WEB_ROOT}/templates/{$template}/css/tt-rtl-custom.css?v={$versionHash}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
     {$headoutput}
 </head>
 <body class="tt-body-wrapper {if $templatefile == 'homepage'}primary-bg-color bg-gray-light{/if}">
