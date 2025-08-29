@@ -559,22 +559,18 @@ body {
 }
 
 /* Fix layout stability and prevent horizontal shake/movement */
-html, body {
-    overflow-x: hidden !important;
-    max-width: 100vw;
+html {
+    overflow-x: hidden;
 }
 
-.container, .container-fluid {
+body {
     overflow-x: hidden;
-    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Additional responsive typography improvements */
 @media (max-width: 575px) {
-    /* Prevent horizontal scrolling issues */
-    * {
-        max-width: 100%;
-    }
     
     /* Header text scaling */
     .text-center .h3 {
@@ -749,25 +745,12 @@ html, body {
     /* Prevent any elements from causing horizontal overflow */
     .tt-registration-form, .tt-login-form {
         width: 100%;
-        max-width: 100%;
         overflow: hidden;
     }
     
     .container {
         padding-left: 15px;
         padding-right: 15px;
-        max-width: 100%;
-    }
-    
-    /* Ensure Bootstrap grid doesn't overflow */
-    .row {
-        margin-left: 0;
-        margin-right: 0;
-        max-width: 100%;
-    }
-    
-    [class*="col-"] {
-        max-width: 100%;
     }
     
     /* Fix any potential Bootstrap responsive issues */
