@@ -2,6 +2,16 @@
 
 Kohost is a Persian/RTL web hosting management system built on top of WHMCS (Web Host Manager Complete Solution). It provides an enhanced hosting provider interface with custom business type selection, referral systems, and specialized forms for different service types. The system focuses on providing a localized experience for Persian-speaking users with comprehensive RTL support and custom styling.
 
+# Recent Changes
+
+**August 29, 2025:**
+- **Enhanced Authentication Pages**: Completely redesigned login and registration pages with modern business management theme
+- **Business Type Selection**: Added 6 interactive business type cards (Website Creation, Advertising, Marketing, Referrals, Writing, E-commerce)
+- **Full Responsive Design**: Implemented comprehensive responsive design optimized for mobile, tablet, and desktop screens
+- **Persian RTL Optimization**: Enhanced Persian font support (Vazir, Tahoma, IRANSans) and improved RTL layout
+- **Modern UI Components**: Added gradient backgrounds, interactive animations, hover effects, and professional styling
+- **Mobile-First Design**: Optimized touch targets, typography scaling, and mobile-specific layouts with proper iOS support
+
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
