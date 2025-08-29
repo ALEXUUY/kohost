@@ -188,18 +188,305 @@ body {
     box-shadow: 0 4px 15px rgba(28, 64, 242, 0.3);
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .business-type-card {
+/* Enhanced Responsive Design */
+
+/* Extra Small devices (phones, less than 576px) */
+@media (max-width: 575px) {
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .tt-registration-form {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .tt-registration-form .card-body {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    /* Business Type Cards for Mobile */
+    .business-type-card .col-md-4,
+    .business-type-card .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .business-type-card .card {
+        min-height: 100px;
+        margin-bottom: 0;
+        padding: 0.75rem;
+    }
+    
+    .business-type-card .card i {
+        font-size: 1.25rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .business-type-card .card-title {
+        font-size: 11px;
+        margin-bottom: 0.25rem;
+        line-height: 1.3;
+    }
+    
+    .business-type-card .card small {
+        font-size: 9px;
+        line-height: 1.2;
+    }
+    
+    /* Form improvements for mobile */
+    .form-control {
+        padding: 0.875rem 0.75rem;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .input-group-text {
+        padding: 0.875rem 0.75rem;
+    }
+    
+    .btn-lg {
+        padding: 1rem 1.5rem;
+        font-size: 16px;
+        width: 100%;
+    }
+    
+    /* Headers and text */
+    .h3 {
+        font-size: 1.5rem;
+    }
+    
+    .h5 {
+        font-size: 1.25rem;
+    }
+    
+    .lead {
+        font-size: 0.95rem;
         margin-bottom: 1rem;
     }
     
+    /* Badge adjustments */
+    .badge {
+        font-size: 9px;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    /* Login form adjustments */
+    .tt-form-container {
+        flex-direction: column;
+    }
+    
+    .tt-login-registration-testimonial {
+        order: -1;
+        min-height: 180px;
+        margin-bottom: 1rem;
+    }
+    
+    .tt-form-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    /* Spacing adjustments */
+    .mb-4 { margin-bottom: 1.5rem !important; }
+    .mb-3 { margin-bottom: 1rem !important; }
+    .p-4 { padding: 1.5rem !important; }
+    .p-5 { padding: 2rem !important; }
+    
+    /* Business type selection adjustments */
+    .bg-gradient .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    .row.g-3 {
+        margin: -0.5rem;
+    }
+    
+    .row.g-3 > * {
+        padding: 0.5rem;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .business-type-card .col-md-4,
+    .business-type-card .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    
+    .business-type-card .card {
+        min-height: 110px;
+    }
+    
+    .tt-registration-form .card-body {
+        padding: 2rem !important;
+    }
+    
+    .btn-lg {
+        padding: 1rem 2rem;
+        font-size: 16px;
+    }
+    
+    .tt-form-content {
+        padding: 2rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .business-type-card .col-md-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+    
+    .business-type-card .card {
+        min-height: 130px;
+    }
+    
+    .business-type-card .card i {
+        font-size: 2rem !important;
+    }
+    
+    .tt-registration-form .card-body {
+        padding: 2.5rem !important;
+    }
+    
+    .tt-form-container {
+        flex-direction: row;
+    }
+    
+    .tt-login-registration-testimonial {
+        min-height: 400px;
+    }
+    
+    /* Adjust form layout for tablets */
+    .row .col-sm-6 {
+        margin-bottom: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 1rem 2rem;
+        font-size: 16px;
+    }
+    
     .tt-referral-dashboard .card-body {
-        padding: 1rem;
+        padding: 1.5rem;
     }
     
     .service-card {
         margin-bottom: 1rem;
+    }
+}
+
+/* Large devices (desktops, 1025px and up) */
+@media (min-width: 1025px) {
+    .business-type-card .card {
+        min-height: 140px;
+    }
+    
+    .business-type-card .card:hover {
+        transform: translateY(-3px) scale(1.01);
+    }
+    
+    .tt-login-registration-testimonial {
+        min-height: 500px;
+    }
+}
+
+/* Touch-friendly improvements for mobile and tablet */
+@media (max-width: 1024px) {
+    .btn, .form-control, .card {
+        -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    }
+    
+    .business-type-card .card:active {
+        transform: scale(0.98);
+    }
+    
+    /* Improve touch targets */
+    .business-type-card label {
+        min-height: 44px; /* Apple's recommended touch target size */
+    }
+    
+    .btn {
+        min-height: 44px;
+    }
+    
+    /* Login Form Mobile Optimizations */
+    .tt-form-wrap {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .tt-form-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tt-login-registration-testimonial {
+        flex: 0 0 auto;
+        background: var(--primary) !important;
+    }
+    
+    .tt-form-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 1rem;
+    }
+}
+
+/* Specific mobile login improvements */
+@media (max-width: 575px) {
+    /* Login page mobile specific */
+    .tt-form-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .tt-login-registration-testimonial {
+        min-height: 150px;
+        padding: 1rem;
+    }
+    
+    .tt-login-registration-testimonial .text-center {
+        padding: 1rem 0.5rem;
+    }
+    
+    .tt-login-registration-testimonial h4 {
+        font-size: 1.1rem;
+    }
+    
+    .tt-login-registration-testimonial p {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .tt-login-registration-testimonial .row .col-4 {
+        padding: 0.25rem;
+    }
+    
+    .tt-login-registration-testimonial .fas {
+        font-size: 1rem !important;
+    }
+    
+    .tt-login-registration-testimonial small {
+        font-size: 0.7rem;
+    }
+    
+    /* Badge improvements for mobile header */
+    .d-flex.justify-content-center .badge {
+        font-size: 8px;
+        padding: 0.2rem 0.4rem;
+        margin: 0 0.2rem;
+    }
+    
+    .d-flex.justify-content-center .badge i {
+        display: none;
     }
 }
 
@@ -269,6 +556,83 @@ body {
 
 .tt-registration-form .card {
     animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Additional responsive typography improvements */
+@media (max-width: 575px) {
+    /* Header text scaling */
+    .text-center .h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .text-center .lead {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* Card title improvements */
+    .card-body .h5 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Business type card text optimization */
+    .business-type-card .card-title {
+        font-size: 11px !important;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 0.25rem;
+    }
+    
+    .business-type-card small {
+        font-size: 9px !important;
+        line-height: 1.1;
+        display: block;
+        margin-top: 0.25rem;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .business-type-card .card-title {
+        font-size: 12px;
+    }
+    
+    .business-type-card small {
+        font-size: 10px;
+    }
+}
+
+/* Ultra wide screen optimization */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .tt-registration-form {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+    .tt-login-registration-testimonial {
+        min-height: 120px;
+    }
+    
+    .tt-form-content {
+        padding: 1rem;
+    }
+    
+    .business-type-card .card {
+        min-height: 90px;
+    }
+    
+    .business-type-card .card i {
+        font-size: 1rem !important;
+        margin-bottom: 0.25rem !important;
+    }
 }
 
 [data-bs-theme="dark"] .service-card {
